@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <title>Document</title>
+    <style>
+        :root {
+        --clr-neon: hsl(317 100% 54%);
+        --clr-bg: hsl(323 21% 16%);
+        }
+        body{
+            font-family: "Nunito";
+            text-align: center;
+            color: white;
+            background: black;
+        }
+        section{
+            border-collapse: collapse;
+            border: purple 5px solid;
+            border-radius: 20px;
+        }
+
+        *,
+        *::before,
+        *::after {
+        box-sizing: border-box;
+        }
+
+        .neon-button {
+        font-size: 37px;
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--clr-neon);
+        border: var(--clr-neon) 0.125em solid;
+        padding: 0.25em 1em;
+        border-radius: 0.25em;
+        text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+        position: relative;
+        }
+
+        .neon-button::before {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        background: var(--clr-neon);
+        top: 120%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+        filter: blur(1em);
+        opacity: 0.7;
+        }
+
+        .neon-button::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        background-color: var(--clr-neon);
+        z-index: -1;
+        transition: opacity 100ms linear;
+        }
+
+        .neon-button:hover,
+        .neon-button:focus {
+        color: var(--clr-bg);
+        text-shadow: none;
+        }
+
+        .neon-button:hover::before,
+        .neon-button:focus::before {
+        opacity: 1;
+        }
+        .neon-button:hover::after,
+        .neon-button:focus::after {
+        opacity: 1;
+        }
+        .neon-button:active{
+        background: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#toggle').click(function(){
+                $('section').toggle(1000);
+            });
+            $('#fadeIn').click(function(){
+                $('section').fadeIn(1000);
+            });
+            $('#fadeOut').click(function(){
+                $('section').fadeOut(1000);
+            });
+            $('#hide').click(function(){
+                $('section').hide();
+            });
+            $('#show').click(function(){
+                $('section').show();
+            });
+        })
+    </script>
+</head>
+<body>
+    <label id="toggle" class="neon-button">toggle</label>
+    <label id="fadeIn" class="neon-button">fade in</label>
+    <label id="fadeOut" class="neon-button">fade out</label>
+    <label id="hide" class="neon-button">hide</label>
+    <label id="show" class="neon-button">show</label>
+    <br><br><br><br><br>
+    <section class="lightgreen">
+        <h1>Curve</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus laborum placeat minima voluptate
+            tempora modi quo maiores. Suscipit dicta, ducimus enim sunt assumenda eaque doloremque modi iusto nostrum.
+            Consectetur, harum.</p>
+    </section>
+    <br>
+    <section class="red">
+        <h1>Curve</h1>
+        <p>Asperiores consequatur quibusdam praesentium eos labore natus, reprehenderit cupiditate quas accusantium
+            necessitatibus nisi esse dolores cum non laudantium mollitia quidem laborum quaerat sequi! Excepturi et
+            voluptatum itaque sapiente commodi maiores?</p>
+    </section>
+    <br><section class="orange">
+        <h1>Curve</h1>
+        <p>Hic iusto ipsum quo repellendus, aliquam rerum explicabo inventore quia incidunt! Porro laborum, excepturi
+            accusamus iusto corporis vel sed rerum id minus cum soluta natus vero, culpa labore nostrum omnis?</p>
+    </section>
+    <br><section class="white">
+        <h1>Curve</h1>
+        <p>Unde aspernatur modi sint quisquam? Deserunt harum non praesentium perspiciatis aliquam suscipit id, sequi
+            ullam, iusto, laboriosam asperiores alias! Ab a neque magni culpa placeat at rerum molestiae sint
+            distinctio.</p>
+    </section>
+    <br><section class="black">
+        <h1>Curve</h1>
+        <p>Atque ex accusantium saepe praesentium temporibus, facere impedit est dignissimos architecto unde deserunt,
+            eum veritatis ea reiciendis cum tenetur necessitatibus aut! Cum maiores, facilis similique unde doloribus
+            magnam magni quos.</p>
+    </section>
+    <br><section class="green">
+        <h1>Curve</h1>
+        <p>Dolore nulla, commodi sapiente inventore laborum vero consequuntur. Sit reiciendis eaque eius cupiditate
+            quibusdam tenetur inventore. Assumenda quaerat aliquam voluptatum eligendi, blanditiis sunt quia? Beatae
+            magnam reprehenderit distinctio nobis odio!</p>
+    </section>
+    <br><section class="pink">
+        <h1>Curve</h1>
+        <p>Voluptatem, maiores, reprehenderit dolorum illum recusandae voluptatibus voluptates a perferendis, aut
+            consequatur nobis. Repellendus tenetur voluptates veritatis, odit excepturi hic, nesciunt cum minima in
+            nisi, voluptatum saepe accusantium porro amet!</p>
+    </section>
+    <br><section class="brown">
+        <h1>Curve</h1>
+        <p>Nesciunt blanditiis quis unde iure cumque? Expedita delectus a omnis, quidem sunt consequatur eos quaerat
+            suscipit quas odit, laudantium eveniet ducimus fugiat, molestiae nisi reprehenderit excepturi culpa fugit.
+            Consequatur, officiis?</p>
+    </section>
+</body>
+
+</html>
